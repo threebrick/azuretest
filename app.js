@@ -182,7 +182,7 @@ dialog.matches('Documents', [
             var html = bestPassage.passage_text;
             striptags(html, [], '\n');
 
-            //session.send('Best Passage - ' + bestPassage.passage_text);
+            session.send('Best Passage - ' + bestPassage.passage_text);
             session.send(striptags(html, [], '\n'));
 
             // Trim the passage to try to get just the answer part of it.
@@ -206,6 +206,7 @@ dialog.matches('Documents', [
                 // We found the first non-blank answer after the end of a question. Use it.
                 break;
               }
+              session.send('best line ' + bestLine);
             }
             discoveryResponse =
               bestLine || 'Sorry I currently do not have an appropriate response for your query. Our customer care executive will call you in 24 hours.';
