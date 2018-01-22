@@ -206,7 +206,7 @@ dialog.matches('Documents', [
                 // We found the first non-blank answer after the end of a question. Use it.
                 break;
               }
-              session.send('best line ' + bestLine);
+              
             }
             discoveryResponse =
               bestLine || 'Sorry I currently do not have an appropriate response for your query. Our customer care executive will call you in 24 hours.';
