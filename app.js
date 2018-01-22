@@ -187,7 +187,7 @@ dialog.matches('Documents', [
 
             // Trim the passage to try to get just the answer part of it.
             const lines = bestPassage.passage_text.split('\n');
-            session.send('Lines - ' + lines);
+            //session.send('Lines - ' + lines);
             let bestLine;
             let questionFound = false;
             for (let i = 0, size = lines.length; i < size; i++) {
