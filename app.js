@@ -54,7 +54,7 @@ var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azu
 var bot = new builder.UniversalBot(connector);
 bot.set('storage', tableStorage);
 
-var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
+/*var qnarecognizer = new builder_cognitiveservices.QnAMakerRecognizer({
                 knowledgeBaseId: process.env.QnAKnowledgebaseId, 
     subscriptionKey: process.env.QnASubscriptionKey});
 
@@ -62,7 +62,14 @@ var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
     recognizers: [recognizer],
                 defaultMessage: 'No match! Try changing the query terms!',
                 qnaThreshold: 0.3}
-);
+);*/
+
+var qnarecognizer = new cognitiveservices.QnAMakerRecognizer({
+    //knowledgeBaseId: 'set your kbid here',
+    //subscriptionKey: 'set your subscription key here',
+    knowledgeBaseId: process.env.QnAKnowledgebaseId, 
+	subscriptionKey: process.env.QnASubscriptionKey,
+    top: 4});
 
 var model='https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/6af4a628-49af-4188-a70c-6a95982c730e?subscription-key=8a605684fc204a3ea3c6f29e2a390002&verbose=true&timezoneOffset=-300';
 var recognizer = new builder.LuisRecognizer(model);
