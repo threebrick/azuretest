@@ -64,7 +64,7 @@ var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
                 qnaThreshold: 0.3}
 );*/
 
-var qnarecognizer = new cognitiveservices.QnAMakerRecognizer({
+var qnarecognizer = new builder_cognitiveservices.QnAMakerRecognizer({
     //knowledgeBaseId: 'set your kbid here',
     //subscriptionKey: 'set your subscription key here',
     knowledgeBaseId: process.env.QnAKnowledgebaseId, 
