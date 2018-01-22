@@ -130,7 +130,7 @@ discoverySetup.setupDiscovery(discoverySetupParams, (err, data) => {
 var dialog = new builder.IntentDialog({ recognizers: [recognizer, qnarecognizer] });
 bot.dialog('/', dialog);
 dialog.onBegin(function (session, args, next) {
-    session.send("Hi... I'm the Knowledge Help Bot. I can help you find FAQs online and in your documents.  Please ask your question.");
+    session.send("Hi... I'm the Knowledge Help Bot. I can help you answer FAQs online and in your documents.  Please ask your question.");
 
 });
     
@@ -182,7 +182,7 @@ dialog.matches('Documents', [
             var html = bestPassage.passage_text;
             striptags(html, [], '\n');
 
-            session.send('Best Passage - ' + bestPassage.passage_text);
+            //session.send('Best Passage - ' + bestPassage.passage_text);
             session.send(striptags(html, [], '\n'));
 
             // Trim the passage to try to get just the answer part of it.
@@ -221,6 +221,8 @@ dialog.matches('Documents', [
       }
 
     }
+
+    
 ]);
 
 //intents.matches('luisIntent2', builder.DialogAction.send('Inside LUIS Intent 2.'));
